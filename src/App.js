@@ -15,6 +15,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.handleRemovePlayer = this.handleRemovePlayer.bind(this);
+    this.handleChangeScore = this.handleChangeScore.bind(this);
   }
   render() {
     return(
@@ -29,7 +30,9 @@ class App extends React.Component {
               <Player name={player.name} key={player.id}
                       id={player.id}
                       score={player.score}
-                      removePlayer={this.handleRemovePlayer} />
+                      changeScore={this.handleChangeScore}
+                      removePlayer={this.handleRemovePlayer}
+              />
             )
           })
         }
@@ -41,6 +44,19 @@ class App extends React.Component {
     console.log("handleRemovePlayer", id);
     this.setState(prevState => {
       const players = prevState.players.filter(player => player.id !== id)
+      return {players}
+    })
+  }
+  handleChangeScore(id, delta) {
+    console.log(id, delta);
+    this.setState(prevState => {
+      //id에 해당하는 player를 찾은 다음 score에 delta를 더한다.
+      const players = [ ...prevState.players ]; // dcapy (...)
+      players.forEach(player => {
+        if (player.id == id) {
+          player.score += delta;
+        }
+      })
       return {players}
     })
   }
