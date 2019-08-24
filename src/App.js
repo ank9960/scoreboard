@@ -20,7 +20,7 @@ class App extends React.Component {
   render() {
     return(
       <div className="scoreboard">
-        <Header title="My Scoreboard" totalPlayers={11} />
+        <Header title="My Scoreboard" players={this.state.players} />
 
         {/*Player List*/}
         {/*<Player name="Jini" score={50} />*/}
