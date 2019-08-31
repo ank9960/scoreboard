@@ -2,9 +2,9 @@ import React from 'react';
 
 export const Stats = (props) => {
 	//todo: 로직구현
-	var totalPlayers = 0;
-	const totalScore = 0;
-	totalPlayers = props.players.length;
+	const totalPlayers = props.players.length;
+	let totalScore = 0;
+	props.players.forEach(player => totalScore += player.score);
 	return (
 		<table className="stats">
 			<tbody>
