@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const stats = (props) => {
+export const Stats = (props) => {
 	//todo: 로직구현
-	const totalPlayers = 0
-	const totalScore = 0
+	var totalPlayers = 0;
+	const totalScore = 0;
+	totalPlayers = props.players.length;
 	return (
 		<table className="stats">
 			<tbody>
