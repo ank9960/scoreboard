@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {changeScore} from "../redux/action";
 
-export class Counter extends React.Component { // extends React.Component : 부모가 갖고있는 속성과 메서드를 다 물려받음
+class Counter extends React.Component { // extends React.Component : 부모가 갖고있는 속성과 메서드를 다 물려받음
 	/*handleChangeScore(delta) {
 		console.log('incrementScore', this);
 		this.setState(prevState => ({score: prevState.score + delta}));
@@ -24,3 +26,9 @@ Counter.propTypes = {
 	id: PropTypes.number,
 	changeScore: PropTypes.func
 }
+
+const mapActionToProps = (dispatch) => ({
+	changeScore: (id, delta) => dispatch(changeScore(id, delta))
+})
+
+export default connect(null, mapActionToProps)(Counter);
