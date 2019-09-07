@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import { Player } from './components/Player';
+import Player from './components/Player';
 import AddPlayerForm from './components/AddPlayerForm';
 import {connect} from "react-redux";
 
 class App extends React.Component {
   constructor() {
     super();
-    this.handleRemovePlayer = this.handleRemovePlayer.bind(this);
+    //this.handleRemovePlayer = this.handleRemovePlayer.bind(this);
     //this.handleChangeScore = this.handleChangeScore.bind(this);
   }
   render() {
@@ -25,7 +25,7 @@ class App extends React.Component {
                       id={player.id}
                       score={player.score}
                       //changeScore={this.handleChangeScore}
-                      removePlayer={this.handleRemovePlayer}
+                      //removePlayer={this.handleRemovePlayer}
               />
             )
           })
@@ -35,14 +35,14 @@ class App extends React.Component {
       </div>
     )
   }
-  handleRemovePlayer(id) {
-    console.log(this);
-    console.log("handleRemovePlayer", id);
-    this.setState(prevState => {
-      const players = prevState.players.filter(player => player.id !== id)
-      return {players}
-    })
-  }
+  // handleRemovePlayer(id) {
+  //   console.log(this);
+  //   console.log("handleRemovePlayer", id);
+  //   this.setState(prevState => {
+  //     const players = prevState.players.filter(player => player.id !== id)
+  //     return {players}
+  //   })
+  // }
   // handleChangeScore(id, delta) {
   //   console.log(id, delta);
   //   this.setState(prevState => {

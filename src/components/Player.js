@@ -1,8 +1,10 @@
 import React from "react";
 import Counter from './Counter';
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {removePlayer} from "../redux/action";
 
-export class Player extends React.PureComponent {
+class Player extends React.PureComponent {
 	static propTypes = {
 		removePlayer: PropTypes.func,
 		changeScore: PropTypes.func,
@@ -25,7 +27,7 @@ export class Player extends React.PureComponent {
 				<Counter
 					score={score}
 					id={id}
-					changeScore={changeScore}
+					//changeScore={changeScore}
 				/>
 			</div>
 		)
@@ -37,3 +39,9 @@ export class Player extends React.PureComponent {
 		return this.props.score !== nextProps.score;
 	}
 }
+
+const mapActionToProps = (dispatch) => ({
+	removePlayer: (id) => dispatch(removePlayer(id))
+})
+
+export default connect(null, mapActionToProps)(Player);
