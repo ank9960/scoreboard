@@ -1,3 +1,5 @@
+import {ADD_PLAYER} from "../actionTypes";
+
 let maxId = 4;
 
 const playerInitialState = {
@@ -14,7 +16,7 @@ const playerInitialState = {
 // state의 초기 default는 playerInitialState로 받는다.
 export const playerReducer = (state = playerInitialState, action) => {
 	switch (action.type) {
-		case 'ADD_PLAYER':
+		case ADD_PLAYER:
 			// 기존 player에 name을 가진 player 객체 추가
 			state.players.push({name: action.name, score: 0, id: ++maxId});
 			return {
