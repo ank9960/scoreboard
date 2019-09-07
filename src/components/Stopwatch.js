@@ -55,3 +55,5 @@ const mapActionToProps = (dispatch) => ({
 })
 
 export default connect(null, mapActionToProps)(Stopwatch);
+// const mapActionToProps 3줄을 하지 않고 표현할 수 있는 방법
+//export default connect(null, {updateTitle})(Stopwatch);
