@@ -1,4 +1,6 @@
 import {combineReducers} from "redux";
+import {playerReducer} from "./players";
+
 
 export const allReducers = combineReducers({
 	playerReducer
@@ -8,6 +10,7 @@ export const allReducers = combineReducers({
 // Q: 초기 state를 적으시오.
 // {
 // 	playerReducer: {
-// 		title: 'My Scoreboard'
+// 		title: 'My Scoreboard',
+//		players: [xxx]
 // 	}
 // }
