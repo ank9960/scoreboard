@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import { Player } from './components/Player';
-import { AddPlayerForm } from './components/AddPlayerForm';
+import AddPlayerForm from './components/AddPlayerForm';
 import {connect} from "react-redux";
 
 class App extends React.Component {
@@ -31,7 +31,7 @@ class App extends React.Component {
           })
         }
         {/*// 2) 콜백 펑션을 props로 내려주기*/}
-        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        <AddPlayerForm />
       </div>
     )
   }
@@ -56,19 +56,19 @@ class App extends React.Component {
       return {players}
     })
   }
-  // 1) 콜백 펑션 정의
-  handleAddPlayer = (name) => {
-    console.log(name);
-    // add palyer 로직
-    this.setState(prevState => {
-      // 원본 배열을 훼손 x. => deep copy
-      const players = [ ...prevState.players ];
-
-      players.push({name, score: 0, id: ++this.maxId});
-
-      return {players};
-    })
-  }
+  // // 1) 콜백 펑션 정의
+  // handleAddPlayer = (name) => {
+  //   console.log(name);
+  //   // add palyer 로직
+  //   this.setState(prevState => {
+  //     // 원본 배열을 훼손 x. => deep copy
+  //     const players = [ ...prevState.players ];
+  //
+  //     players.push({name, score: 0, id: ++this.maxId});
+  //
+  //     return {players};
+  //   })
+  // }
 }
 
 const mapStateToProps = (state) => ({

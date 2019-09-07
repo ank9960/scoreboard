@@ -13,5 +13,17 @@ const playerInitialState = {
 // state와 action을 받아서 새로운 state로 return
 // state의 초기 default는 playerInitialState로 받는다.
 export const playerReducer = (state = playerInitialState, action) => {
-	return state;
+	switch (action.type) {
+		case 'ADD_PLAYER':
+			// 기존 player에 name을 가진 player 객체 추가
+			state.players.push({name: action.name, score: 0, id: ++maxId});
+			return {
+				...state,
+				players: [
+					...state.players
+				]
+			}
+		default:
+			return state;
+	}
 }
