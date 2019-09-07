@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export class Counter extends React.Component { // extends React.Component : 부모가 갖고있는 속성과 메서드를 다 물려받음
 	/*handleChangeScore(delta) {
@@ -16,4 +17,10 @@ export class Counter extends React.Component { // extends React.Component : 부�
 			</div>
 		)
 	}
+}
+
+Counter.propTypes = {
+	sore: PropTypes.number,
+	id: PropTypes.number,
+	changeScore: PropTypes.func
 }
