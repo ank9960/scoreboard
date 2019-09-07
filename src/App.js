@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Header } from './components/Header';
+import Header from './components/Header';
 import { Player } from './components/Player';
 import { AddPlayerForm } from './components/AddPlayerForm';
 import {connect} from "react-redux";
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return(
       <div className="scoreboard">
-        <Header title="My Scoreboard" players={this.props.players} />
+        <Header players={this.props.players} />
 
         {/*Player List*/}
         {/*<Player name="Jini" score={50} />*/}
