@@ -34,11 +34,11 @@ class Player extends React.PureComponent {
 		)
 	}
 
-	shouldComponentUpdate(nextProps, nextState, nextContext) {
-		console.log(nextProps);
-		// score가 다를 경우만 true를 리턴
-		return this.props.score !== nextProps.score;
-	}
+	// shouldComponentUpdate(nextProps, nextState, nextContext) {
+	// 	console.log(nextProps);
+	// 	// score가 다를 경우만 true를 리턴
+	// 	return this.props.score !== nextProps.score;
+	// }
 }
 
 const mapActionToProps = (dispatch) => ({
